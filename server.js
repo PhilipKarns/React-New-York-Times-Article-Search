@@ -29,7 +29,7 @@ app.use(express.static("./public"));
 mongoose.Promise = Promise;
 
 // MongoDB configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://admin:codingrocks@ds023674.mlab.com:23674/heroku_5ql1blnl");
+mongoose.connect("mongodb://heroku_ctl1fr5g:hqppg1nkikrqo0usimk26tr15n@ds163721.mlab.com:63721/heroku_ctl1fr5g");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
