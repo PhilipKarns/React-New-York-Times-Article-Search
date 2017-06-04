@@ -1,0 +1,28 @@
+{
+  "name": "React-New-York-Times-Article-Search",
+  "version": "1.0.0",
+  "description": "App to search for NYT articles using the MERN stack",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.4",
+    "morgan": "^1.8.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pakmania10/React-New-York-Times-Article-Search.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pakmania10/React-New-York-Times-Article-Search/issues"
+  },
+  "homepage": "https://github.com/pakmania10/React-New-York-Times-Article-Search#readme"
+}
