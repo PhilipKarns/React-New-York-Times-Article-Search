@@ -29,7 +29,8 @@ app.use(express.static("./public"));
 mongoose.Promise = Promise;
 
 // MongoDB configuration (Change this URL to your own DB)
-mongoose.connect("mongodb://heroku_ctl1fr5g:hqppg1nkikrqo0usimk26tr15n@ds163721.mlab.com:63721/heroku_ctl1fr5g");
+//MAY NEED TO CHANGE USERNAME AND PASSWORD BACK TO HEROKU?
+mongoose.connect("mongodb://pakmania10:Atlanta@10@ds163721.mlab.com:63721/heroku_ctl1fr5g");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
