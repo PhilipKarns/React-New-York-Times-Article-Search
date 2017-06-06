@@ -41,10 +41,22 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-// -------------------------------------------------
+// ROUTES-------------------------------------------------
 
+//query MongoDB for all saved articles
+app.get("/api/saved", function(req, res) {
+});
+//save an article to the database
+app.post("/api/saved", function(req, res) {
+});
+//delete a saved article in the database
+app.delete("/api/saved", function(req, res) {
+});
 
-
+// Main "/" HTML Route. This will redirect the user to our rendered React application
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/public/index.html");
+});
 // -------------------------------------------------
 
 // Listen on port 3000

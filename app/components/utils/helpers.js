@@ -2,7 +2,7 @@
 var axios = require("axios");
 
 // NYT API
-//var NYTAPI = "";
+var NYTAPI = "dc308e8b2622429c86c5873c86167e98";
 
 // Helper functions for making API Calls
 var helper = {
@@ -28,12 +28,17 @@ var helper = {
   // This function hits our own server to retrieve the record of saved results
   getSaved: function() {
     //MAKE SURE MY ROUTE MATCHES THIS
-    return axios.get("/api");
+    return axios.get("/api/saved");
   },
 
-  // This function posts new searches to our database.
-  postHistory: function(location) {
-    return axios.post("/api", { location: location });
+  // This function posts saved articles to our database.
+  postSaved: function(location) {
+    return axios.post("/api/saved", { location: location });
+  },
+
+  //deletes articles from the DB
+  deleteSaved: function() {
+    return axios.delete("/api/saved")
   }
 };
 

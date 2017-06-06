@@ -33,4 +33,38 @@ var Main = React.createClass({
     }.bind(this));
   },
 
+  render: function() {
+  	return (
+      <div className="container">
+        <div className="row">
+          <div className="jumbotron">
+            <h2 className="text-center">New York Times Article Search</h2>
+            <p className="text-center">
+              <em>Search for an annotate articles of interest.</em>
+            </p>
+          </div>
+
+          <div className="col-md-12">
+          	<div>
+            	<Search setTerm={this.setTerm} />
+            <div>
+          </div>
+
+          <div className="col-md-12">
+
+            <Results address={this.state.results} />
+
+          </div>
+
+        </div>
+
+        <div className="row">
+
+          <History history={this.state.history} />
+
+        </div>
+
+      </div>  		
+  	);//return
+  }//render
 });//main
