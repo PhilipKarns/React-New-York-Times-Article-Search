@@ -25,7 +25,7 @@ var helper = {
     });
   },
 
-  // This function hits our own server to retrieve the record of saved results
+  // This function hits our own server to retrieve the record of saved results via the GET /api/saved route
   getSaved: function() {
     //MAKE SURE MY ROUTE MATCHES THIS
     return axios.get("/api/saved");

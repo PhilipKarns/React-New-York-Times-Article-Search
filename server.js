@@ -43,7 +43,7 @@ db.once("open", function() {
 
 // ROUTES-------------------------------------------------
 
-//query MongoDB for all saved articles
+//query MongoDB for all saved articles on page load
 app.get("/api/saved", function(req, res) {
 });
 //save an article to the database
