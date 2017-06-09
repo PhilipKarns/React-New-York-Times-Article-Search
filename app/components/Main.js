@@ -2,7 +2,7 @@
 var React = require("react");
 
 // Here we include all of the sub-components
-// var Search = require("./children/Search");
+var Search = require("./children/Search");
 // var Saved = require("./children/Saved");
 
 // Helper for making AJAX requests to our API
@@ -55,8 +55,8 @@ var Main = React.createClass({
 
   },
   // This function allows childrens to update the parent.
-  setTopic: function(topic) {
-    this.setState({ searchTopic: topic });
+  setQuery: function(queryTopic, queryStartYear, queryEndYear) {
+    this.setState({ searchTopic: queryTopic, startYear: queryStartYear, endYear: queryEndYear });
   },
   render: function() {
   	return (
@@ -71,7 +71,7 @@ var Main = React.createClass({
 
           <div className="col-md-12">
           	<div>
-            	<Search setTopic={this.setTopic} startYear={this.startYear} endYear={this.endYear} />
+            	<Search setQuery={this.setQuery} />
             </div>
           </div>
 
