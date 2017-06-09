@@ -11,18 +11,21 @@ var Search = React.createClass({
 	},
 
 	handleChange: function(event, event2, event3) {
-		this.setState({
-			term: event.target.value,
-			searchStartYear: event2.target.value,
-			searchEndYear: event3.target.value
-		});
+		// this.setState({
+		// 	term: event.target.value,
+		// 	searchStartYear: event2.target.value,
+		// 	searchEndYear: event3.target.value
+		// });
+		var newState = {};
+		newState[event.target.id] = event.target.value;
+		this.setState(newState);
 	},
 
 	handleSubmit: function(event) {
 		event.preventDefault();
 
 		//send the search terms to the parent
-		this.props.setTerm(this.state.term, this.state.searchStartYear, this.state.searchEndYear);
+		this.props.setQuery(this.state.term, this.state.searchStartYear, this.state.searchEndYear);
 		this.setState({term: "", searchStartYear: "", searchEndYear: ""});
 	},
 

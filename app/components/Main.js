@@ -24,31 +24,31 @@ var Main = React.createClass({
   // The moment the page renders get the Saved Articles. This function calls the helper.js getSaved function.
   //The getSaved function then calls the api/saved API route in server.js
   //the componentDidMount function is then used to update the state, which means all current saved articles should display
-  componentDidMount: function() {
-  	console.log("component mounted");
-    // Get the saved articles.
-    helpers.getSaved().then(function(response) {
-      console.log(response);
-      if (response !== this.state.saved) {
-        console.log("Saved", response.data);
-        this.setState({ saved: response.data });
-      }
-    }.bind(this));
-  },
+  // componentDidMount: function() {
+  // 	console.log("component mounted");
+  //   // Get the saved articles.
+  //   helpers.getSaved().then(function(response) {
+  //     console.log(response);
+  //     if (response !== this.state.saved) {
+  //       console.log("Saved", response.data);
+  //       this.setState({ saved: response.data });
+  //     }
+  //   }.bind(this));
+  // },
 
-  //if a search is entered, run this function
+  //if search criteria is entered, run this function
   //any time one of the state values changes we show it to the user with the componentDidUpdate function
   //we also want to make sure that, if the user refreshes the page, the information should still show what's currently in the DB
   //and not reset the values of our saved articles
   //we're accessing the previous state to see if the state changed. If it does we save it in the DB
-  componentDidUpdate: function() {
-  	if (prevState.topic !== this.state.topic || prevState.startYear !== this.state.startYear || prevState.endYear !== this.state.endYear) {
+  componentDidUpdate: function(prevState) {
+  	if (prevState.searchTopic !== this.state.searchTopic || prevState.startYear !== this.state.startYear || prevState.endYear !== this.state.endYear) {
   		console.log("search criteria updated");
 
-  		helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear).then(function(data) {
-  		if (data !== this.state.results) {
+  		helpers.runQuery(this.state.searchTopic, this.state.startYear, this.state.endYear).then(function(data) {
+  		if (data /*!== this.state.results*/) {
   			console.log("Articles", data);
-  			this.setState({results: data});  			
+  			//this.setState({results: data});  			
   		}//if
   		})//then
   	}//if

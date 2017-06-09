@@ -16,11 +16,20 @@ var helpers = {
 
     // search for the term entered
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
-  NYTAPI + "&q=" + searchTerm + "&begin_date=" + beginDate + "&end_date=" + endDate;
+  NYTAPI + "&q=" + searchTerm + "&begin_date=" + beginDate + "0101" + "&end_date=" + endDate + "0101";
+  
+  var snippets = [];
+
     return axios.get(queryURL).then(function(response) {
+      console.log(response);
       // If get get a result, return that result's formatted address property
-      if (response.data.results[0]) {
-        return response.data.results[0].formatted;
+      if (response.data.response.docs) {
+        for (var i=0; i<5; i++) {
+          console.log(response.data.response.docs[i].snippet);
+          snippets.push(response.data.response.docs[i].snippet);
+        };
+        console.log(snippets);
+        return snippets;
       }
       // If we don't get any results, return an empty string
       return "";
